@@ -4,6 +4,8 @@
 ### Table of Contents
 
 - **[Introduction](#introduction)**
+    + **[Motivation](#motivation)**
+    + **[Object-Oriented Design](#object-oriented-design)**
 - **[Data](#data)**
 - **[Usage](#usage)**
     + **[Dependencies](#dependencies)**
