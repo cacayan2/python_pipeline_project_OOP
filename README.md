@@ -1,18 +1,24 @@
-# HCMV Transcriptome Analysis Pipeline
+# HCMV Transcriptome Analysis Pipeline: An Object-Oriented Perspective
 ## Author: Emil Cacayan
 
 ### Table of Contents
 
 - **[Introduction](#introduction)**
 - **[Data](#data)**
-- **[RNA-Seq Transcriptomic Pipeline Workflow](#rna-seq-transcriptomic-pipeline-workflow)**
 - **[Usage](#usage)**
     + **[Dependencies](#dependencies)**
     + **[Running the Pipeline](#running-the-pipeline)**
+- **[RNA-Seq Transcriptomic Pipeline Workflow](#rna-seq-transcriptomic-pipeline-workflow)**
 - **[Disclaimer](#disclaimer)**
 - **[References](#references)**
 
+### Preface
+
+This is a heavily modified version of an assignment submission for a bioinformatics pipeline I submitted for the COMP 483 class at Loyola University Chicago taught by Dr. Heather Wheeler. I decided to send a scripting-based version of this assignment as my submission, but wrote this script as well which fulfills all the objectives outlined in the assignment. However, due to the fact that is well beyond the scope of the assignment, I decided to make it a separate repository from the original. The original assignment submission can be found [here](https://github.com/cacayan2/python_pipeline_project.git).
+
 ### Introduction
+
+#### Motivation
 
 Transcriptomics is the study of the sum set of all RNA transcripts in a cell, organism, or other entity that manipulates genetic information. It is distinct from genomics as it provides a real-time view of the nexus between the information stored in genetic material and how it may be expressed. 
 
@@ -32,6 +38,25 @@ One of the vectors of genetic information of great interest to researchers are v
     - Transcriptomic analysis of host/viral transcriptomes allows researchers to identify biomarkers to elucidate disease progression/severity (Arriaga-Canon et al., 2022).
 5. **Drug development and discovery.**
     - In understanding the information above, researchers can take advantage of the molecular mechanisms of viral infection to develop drugs to disrupt virus processes or interactions between the virus and its host (Zhou et al., 2021).
+
+#### Object-Oriented Design
+
+### Usage
+
+#### Dependencies
+
+To obtain the raw transcriptomic reads, the RNA-Seq data was obtained from the sequence read archive database using `wget` after setting the current working directory as the root directory (`/python_pipeline_project`):
+
+```
+wget https://www.ncbi.nlm.nih.gov/sra/SRX2896360 -P rna_seq_raw/
+wget https://www.ncbi.nlm.nih.gov/sra/SRX2896363 -P rna_seq_raw/
+wget https://www.ncbi.nlm.nih.gov/sra/SRX2896374 -P rna_seq_raw/
+wget https://www.ncbi.nlm.nih.gov/sra/SRX2896375 -P rna_seq_raw/
+```
+
+This saves the downloaded files into a directory (`/python_pipeline_project/rna_seq_raw/`) - a new directory will be created if one is not already present in the root directory. 
+
+#### Running the Pipeline
 
 ### Data
 
@@ -101,25 +126,6 @@ This pipeline (source code contained in `wrapper.py`) takes RNA-seq viral transc
     Donor3:
     saccc   pident   length   qstart   qend   sstart   send   bitscore   evalue   stitle
     ```
-
-## Usage
-
-### Dependencies
-
-To obtain the raw transcriptomic reads, the RNA-Seq data was obtained from the sequence read archive database using `wget` after setting the current working directory as the root directory (`/python_pipeline_project`):
-
-```
-wget https://www.ncbi.nlm.nih.gov/sra/SRX2896360 -P rna_seq_raw/
-wget https://www.ncbi.nlm.nih.gov/sra/SRX2896363 -P rna_seq_raw/
-wget https://www.ncbi.nlm.nih.gov/sra/SRX2896374 -P rna_seq_raw/
-wget https://www.ncbi.nlm.nih.gov/sra/SRX2896375 -P rna_seq_raw/
-```
-
-This saves the downloaded files into a directory (`/python_pipeline_project/rna_seq_raw/`) - a new directory will be created if one is not already present in the root directory. 
-
-### Running the Pipeline
-
-
 
 ## Disclaimer
 
